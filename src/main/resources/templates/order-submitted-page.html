@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/common/header.html :: common-header" />
+<body>
+	<!-- Navbar -->
+	<div th:replace="/common/header.html :: navbar"></div>
+	<!-- Container begin -->
+	<div class="container">
+
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-xs-12">
+				<div class="alert alert-success">
+					<h3>
+						<i class="fa fa-check" aria-hidden="true"
+							style="color: limegreen;"></i> Thank you, your order has been
+						placed.
+					</h3>
+					<h4>
+						The estimated delivery date is <span
+							th:text="${estimatedDeliveryDate}"></span>
+					</h4>
+				</div>
+
+				<h3>List of Items</h3>
+				<div class="row" th:each="cartItem : ${cartItemList}">
+					<hr />
+					<div class="col-xs-2"></div>
+					<div class="col-xs-2">
+
+						<a th:href="@{/bookDetail(id=${cartItem.book.id})}"> <img
+							class="img-responsive shelf-book"
+							th:src="#{adminPath}+@{/image/book/}+${cartItem.book.id}+'.png'"
+							style="width: 70px;" />
+						</a>
+					</div>
+					<div class="col-xs-6">
+						<div style="margin-left: 50px;">
+							<h4>
+								<a th:href="@{/book-detail?id=}+${cartItem.book.id}"
+									th:text="${cartItem.book.title}"></a>
+							</h4>
+						</div>
+					</div>
+
+					<div class="col-xs-2">
+						<h5 style="color: #db3208; font-size: large;">
+							€<span th:text="${cartItem.book.ourPrice}"
+								th:style="${cartItem.book.inStockNumber}==0? 'text-decoration: line-through' : ''"></span>
+						</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Container end -->
+
+	<!-- Script begin -->
+	<div th:replace="/common/header.html :: body-bottom-scripts"></div>
+	<!-- Script begin -->
+</body>
+</html>

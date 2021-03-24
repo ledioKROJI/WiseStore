@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/common/header.html :: common-header">
+
+</head>
+<body>
+
+	<!-- Navbar -->
+	<div th:replace="/common/header.html :: navbar"></div>
+	<!-- Container begin -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md">
+				<h2>Manage account</h2>
+			</div>
+		</div>
+		<div class="row">
+			<!-- Toggelable tabs -->
+			<div class="col-md">
+				<!-- Navtabs -->
+				<ul class="nav nav-tabs tab-custom-bg tab-custom-border">
+					<li class="nav-item tab-item-custom-border"><a
+						class="nav-link tab-custom-bg"
+						th:classappend="${newAccountClassActive}? 'active'"
+						data-toggle="tab" href="#newaccount">Create new account</a></li>
+					<li class="nav-item tab-item-custom-border"><a
+						class="nav-link tab-custom-bg"
+						th:classappend="${loginClassActive}? 'active'" data-toggle="tab"
+						href="#login">Log in</a></li>
+					<li class="nav-item tab-item-custom-border"><a
+						class="nav-link tab-custom-bg"
+						th:classappend="${forgetPasswordClassActive}? 'active'"
+						data-toggle="tab" href="#forgetpassword">Forget password</a></li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<!-- Create account -->
+					<div class="tab-pane container"
+						th:classappend="${newAccountClassActive}? 'active'"
+						id="newaccount">
+						<form th:action="@{/create-new-account}" method="post">
+							<div class="alert alert-info" th:if="${emailSent}">
+								<p>We've just sent you an email, please confirm your email
+									address.</p>
+							</div>
+							<div class="form-group">
+								<div class="alert alert-danger" th:if="${usernameExists}">
+									<p>This user name already exists... Please choose another
+										one.</p>
+								</div>
+								<label>User name :</label> <input type="text"
+									class="form-control" placeholder="Enter user name"
+									id="username" name="username" required="required">
+							</div>
+							<div class="form-group">
+								<div class="alert alert-danger" th:if="${emailExists}">
+									<p>This email address already exists... Please choose
+										another one.</p>
+								</div>
+								<label for="email">Email address :</label> <input type="email"
+									class="form-control" placeholder="Enter email" id="email"
+									name="email" required="required">
+							</div>
+							<button type="submit" class="btn btn-form">Create</button>
+						</form>
+					</div>
+					<!-- Login -->
+					<div class="tab-pane container"
+						th:classappend="${loginClassActive}? 'active'" id="login">
+						<form th:action="@{/login}" method="post">
+							<div th:if="${param.error}" class="alert alert-danger">
+								You've enter an invalid user name or password.</div>
+							<div th:if="${param.logout}" class="alert alert-success">
+								You have been logged out.</div>
+							<div class="form-group">
+								<label for="username">User name :</label> <input type="text"
+									class="form-control" placeholder="Enter user name"
+									id="username" name="username" required="required">
+							</div>
+							<div class="form-group">
+								<label for="password">Password :</label> <input type="password"
+									class="form-control" placeholder="Enter password" id="password"
+									name="password" required="required">
+							</div>
+							<button type="submit" class="btn btn-form">Log in</button>
+						</form>
+					</div>
+					<!-- Forget password -->
+					<div class="tab-pane container"
+						th:classappend="${forgetPasswordClassActive}? 'active'"
+						id="forgetpassword">
+						<form th:action="@{/forget-password}">
+							<div th:if="${emailNotExist}" class="alert alert-danger">
+								You've enter an invalid email address.</div>
+							<div th:if="${forgetPasswordEmailSent}"
+								class="alert alert-success">We've just sent you an email,
+								please confirm your email address.</div>
+							<div class="form-group">
+								<label for="email">Email address :</label> <input type="email"
+									class="form-control" placeholder="Enter email" id="email"
+									name="email">
+							</div>
+							<button type="submit" class="btn btn-form">Submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Container end -->
+	<!-- Bottom Scripts -->
+	<div th:replace="/common/header.html :: body-bottom-scripts"></div>
+</body>
+</html>

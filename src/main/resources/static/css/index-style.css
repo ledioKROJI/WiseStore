@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+body {
+	padding-bottom: 20px;
+	background-color: #F8FC74;
+}
+
+.navbar {
+	margin-bottom: 20px;
+}
+
+.navbar-custom-bg {
+	background-color: #5C5C5C;
+}
+
+a.nav-custom-formatting:link, a.nav-custom-formatting:visited {
+	color: white;
+}
+
+a.book-title-color:link, a.book-title-color:visited {
+	color: black;
+}
+
+a.book-title-color:hover {
+	color: #EC4C4C;
+}
+
+a.nav-custom-formatting:hover {
+	color: #EC4C4C;
+}
+
+.carousel-custom-bg {
+	background-color: #EC4C4C;
+}
+
+.carousel-img-formatting {
+	width: 70%;
+	height: 80%;
+	margin-left: 15%;
+	margin-top: 10%;
+}
+
+.card-formatting {
+	margin: auto;
+	width: 100%;
+	height: 85%;
+}
+
+.card-img-formatting {
+	margin: auto;
+	width: 100%;
+	height: 55%;
+}
+
+.card-body-formatting {
+	background-color: #8DCAFF;
+}
+
+.btn-formatting {
+	background-color: #F8FC74;
+	color: black;
+}

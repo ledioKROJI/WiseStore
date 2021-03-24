@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/common/header.html :: common-header"></head>
+<body>
+	<!-- Navbar -->
+	<div th:replace="/common/header.html :: navbar"></div>
+	<!-- Container begin -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4" th:each="book, iStat: ${bookList}"
+				th:if="${iStat.count <= 3}">
+				<div class="card card-body-formatting">
+					<img class="card-img-top"
+						th:src="#{adminPath}+@{/image/book/}+${book.id}+'.png'"
+						alt="Book Cover" style="height: 350px">
+					<div class="card-body">
+						<h4 class="card-title" th:text="${book.title}"></h4>
+						<p class="card-text" th:text="${book.author}"></p>
+						<a th:href="@{/book-detail?id=}+${book.id}" class="stretched-link"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 2%">
+			<div class="col-md-4 " th:each="book, iStat: ${bookList}"
+				th:if="${iStat.count > 3 && iStat.count <= 6}">
+				<div class="card card-body-formatting">
+					<img class="card-img-top"
+						th:src="#{adminPath}+@{/image/book/}+${book.id}+'.png'"
+						alt="Book Cover" style="height: 350px">
+					<div class="card-body">
+						<h4 class="card-title" th:text="${book.title}"></h4>
+						<p class="card-text" th:text="${book.author}"></p>
+						<a th:href="@{/book-detail?id=}+${book.id}" class="stretched-link"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 2%">
+			<div class="col-md-4 " th:each="book, iStat: ${bookList}"
+				th:if="${iStat.count > 6 && iStat.count <= 9}">
+				<div class="card card-body-formatting">
+					<img class="card-img-top"
+						th:src="#{adminPath}+@{/image/book/}+${book.id}+'.png'"
+						alt="Book Cover" style="height: 350px">
+					<div class="card-body">
+						<h4 class="card-title" th:text="${book.title}"></h4>
+						<p class="card-text" th:text="${book.author}"></p>
+						<a th:href="@{/book-detail?id=}+${book.id}" class="stretched-link"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Container end -->
+	<!-- Bottom Scripts -->
+	<div th:replace="/common/header.html :: body-bottom-scripts"></div>
+</body>
+</html>

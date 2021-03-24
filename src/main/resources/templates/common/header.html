@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:fragment="common-header">
+
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author"
+	content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
+<meta name="generator" content="Jekyll v4.1.1" />
+
+<title>Wise Store</title>
+
+<link rel="icon" href="/image/icon.png" />
+<link rel="canonical"
+	href="https://getbootstrap.com/docs/4.5/examples/navbars/" />
+<!-- Bootstrap core CSS -->
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+<!-- Custom styles -->
+<link th:href="@{css/index-style.css}" rel="stylesheet">
+<link th:href="@{css/account-style.css}" rel="stylesheet">
+
+</head>
+<body>
+
+	<div th:fragment="navbar">
+		<!-- Navbar being -->
+		<nav class="navbar navbar-expand-md navbar-custom-bg">
+			<a class="navbar-brand" th:href="@{/}"><img class="img-fluid"
+				src="/image/wisestore-logo.png" alt="WiseStore Logo" /></a>
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item"><a class="nav-link nav-custom-formatting"
+						th:href="@{/book-shelf}">List of books</a></li>
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle nav-custom-formatting" href="#"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Best sellers</a> <a
+								class="dropdown-item" href="#">F.A.Q.</a> <a
+								class="dropdown-item" href="#">Contacts</a>
+						</div></li>
+				</ul>
+			</div>
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link nav-custom-formatting"
+					th:href=@{/cart}>Shopping Cart</a></li>
+				<!-- This th:security switch between two tag given to the status of the user : authenticated or anonymous... -->
+				<!-- Space -->
+				<!-- Space -->
+				<li class="nav-item"><a class="nav-link nav-custom-formatting"
+					sec:authorize="isAnonymous()" th:href="@{/login}">My Account</a></li>
+				<li class="nav-item"><a class="nav-link nav-custom-formatting"
+					sec:authorize="isAuthenticated()" th:href="@{/my-profil}">My
+						Account</a></li>
+				<!-- Space -->
+				<!-- Space -->
+				<li class="nav-item"><a class="nav-link nav-custom-formatting"
+					sec:authorize="isAuthenticated()" th:href="@{/logout}">Logout</a></li>
+				<!-- Space -->
+				<!-- Space -->
+			</ul>
+			<form class="form-inline" style="margin-left: 2%">
+				<input class="form-control" type="text" placeholder="Book title">
+				<button type="submit" class="btn btn-formatting">Search</button>
+			</form>
+		</nav>
+		<!-- Navbar end -->
+	</div>
+	<div th:fragment="body-bottom-scripts">
+		<!-- Script begin -->
+		<script src="https://kit.fontawesome.com/cbcd5af621.js"
+			crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+		<script>
+			window.jQuery
+					|| document
+							.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')
+		</script>
+		<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+		<script th:src="@{/js/my-scripts.js}"></script>
+	</div>
+</body>
+</html>

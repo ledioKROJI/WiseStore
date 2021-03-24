@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+.tab-content {
+	border-width: medium;
+	border-bottom: 6px solid #EC4C4C;
+	border-left: 6px solid #EC4C4C;
+}
+
+.nav-tabs>li>a {
+	background-color: #8DCAFF;
+	color: black;
+	border-bottom: #5F5F5F;
+}
+
+.tab-custom-bg.nav-tabs .tab-custom-bg.active {
+	color: black;
+	background-color: #EC4C4C;
+}
+
+.btn-form {
+	margin-bottom: 2%;
+	background-color: #EC4C4C;
+	border-color: #EC4C4C;
+	color: black;
+}
+
+.tab-custom-border {
+	border-width: 0px;
+}
+
+.tab-item-custom-border {
+	border-width: 0px;
+}
+
+#breadcrumb-link {
+	color: white;
+}
+
+.fas:hover {
+	color: #EC4C4C;
+}

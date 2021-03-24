@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/common/header.html :: common-header" />
+<body>
+	<!-- Navbar -->
+	<div th:replace="/common/header.html :: navbar"></div>
+	<!-- Container begin -->
+	<div class="container">
+		<!-- Title -->
+		<div class="row">
+			<div class="col-md">
+				<h1>New books</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md">
+				<!-- Carousel begin -->
+				<div id="books-carousel" class="carousel slide carousel-custom-bg"
+					data-ride="carousel">
+
+					<!-- Indicators -->
+					<ul class="carousel-indicators">
+						<li data-target="#books-carousel" data-slide-to="0" class="active"></li>
+						<li data-target="#books-carousel" data-slide-to="1"></li>
+						<li data-target="#books-carousel" data-slide-to="2"></li>
+					</ul>
+
+					<!-- The slideshow -->
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<div class="row">
+								<div class="col-md">
+									<img src="/image/pic1.png"
+										class="img-fluid rounded carousel-img-formatting"
+										alt="Los Angeles">
+								</div>
+								<div class="col-md">
+									<img src="/image/pic2.png"
+										class="img-fluid rounded carousel-img-formatting"
+										alt="Los Angeles">
+								</div>
+								<div class="col-md">
+									<img src="/image/pic3.png"
+										class="img-fluid rounded carousel-img-formatting"
+										alt="Los Angeles">
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="row">
+								<div class="col-md">
+									<img src="/image/pic1.png"
+										class="img-fluid rounded carousel-img-formatting"
+										alt="Los Angeles">
+								</div>
+								<div class="col-md">
+									<img src="/image/pic2.png"
+										class="img-fluid rounded carousel-img-formatting"
+										alt="Los Angeles">
+								</div>
+								<div class="col-md">
+									<img src="/image/pic3.png"
+										class="img-fluid rounded carousel-img-formatting"
+										alt="Los Angeles">
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="row">
+								<div class="col-md">
+									<img src="/image/pic1.png"
+										class="img-fluid rounded carousel-img-formatting"
+										alt="Los Angeles">
+								</div>
+								<div class="col-md">
+									<img src="/image/pic2.png"
+										class="img-fluid rounded carousel-img-formatting"
+										alt="Los Angeles">
+								</div>
+								<div class="col-md">
+									<img src="/image/pic3.png"
+										class="img-fluid rounded carousel-img-formatting"
+										alt="Los Angeles">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Left and right controls -->
+					<a class="carousel-control-prev" href="#books-carousel"
+						data-slide="prev"> <span class="carousel-control-prev-icon"></span>
+					</a> <a class="carousel-control-next" href="#books-carousel"
+						data-slide="next"> <span class="carousel-control-next-icon"></span>
+					</a>
+
+				</div>
+				<!-- Carousel begin -->
+			</div>
+		</div>
+		<!-- Title -->
+		<div class="row">
+			<div class="col-md">
+				<h1>More...</h1>
+			</div>
+		</div>
+		<!-- Informative row -->
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-formatting">
+					<img class="card-img-top card-img-formatting"
+						src="/image/bestseller.jpg" alt="Card image">
+					<div class="card-body card-body-formatting">
+						<h4 class="card-title">Best Sellers Books</h4>
+						<p class="card-text">Here are the most bought books this last
+							month...</p>
+						<a href="#" class="btn btn-formatting">Visit</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md">
+				<div class="card card-formatting">
+					<img class="card-img-top card-img-formatting" src="/image/faq.jpg"
+						alt="Card image">
+					<div class="card-body card-body-formatting">
+						<h4 class="card-title">F.A.Q.</h4>
+						<p class="card-text">Here you can access our most frequent
+							asked questions...</p>
+						<a href="#" class="btn btn-formatting">Visit</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md">
+				<div class="card card-formatting">
+					<img class="card-img-top card-img-formatting"
+						src="/image/localisation.jpg" alt="Card image">
+					<div class="card-body card-body-formatting">
+						<h4 class="card-title">Contacts</h4>
+						<p class="card-text">Here our can see where our shops are
+							located...</p>
+						<a href="#" class="btn btn-formatting">Visit</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Container end -->
+
+	<!-- Script begin -->
+	<div th:replace="/common/header.html :: body-bottom-scripts"></div>
+	<!-- Script begin -->
+</body>
+</html>
